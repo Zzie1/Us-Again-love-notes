@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>US 🤍 Again</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#e9dcc6;--paper:#f4ecdf;--ink:#4e3a2f;--soft:#8a6f5c;--line:#cdb99c;--accent:#9b6b4a;--seal:#d9c6a8;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#2b2018;--paper:#3a2c22;--ink:#f1e6d3;--soft:#c2a88c;--line:#5c4638;--accent:#d9a77e;--seal:#4a3a2e}}
+:root[data-theme="dark"]{--bg:#2b2018;--paper:#3a2c22;--ink:#f1e6d3;--soft:#c2a88c;--line:#5c4638;--accent:#d9a77e;--seal:#4a3a2e}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Cormorant Garamond',Georgia,serif;font-size:19px;line-height:1.6;min-height:100vh}
+.wrap{max-width:560px;margin:0 auto;padding:28px 18px 60px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:34px 26px;box-shadow:0 8px 30px rgba(78,58,47,.14);text-align:center}
+h1{font-size:2.5rem;margin:0 0 6px;font-weight:600}
+h2{font-size:1.8rem;margin:.2em 0;font-weight:600}
+.script{font-family:'Dancing Script',cursive;color:var(--accent);font-size:1.3rem}
+.tag{font-style:italic;color:var(--soft);font-size:1.2rem;margin:6px 0 18px}
+hr{border:0;border-top:1px solid var(--line);margin:22px 0}
+.small{font-size:.95rem;color:var(--soft)}
+button,.btn{font:inherit;background:var(--accent);color:#fff8ee;border:0;border-radius:30px;padding:12px 26px;margin:8px 4px 0;cursor:pointer;font-size:1.05rem}
+button.ghost{background:transparent;color:var(--accent);border:1px solid var(--accent)}
+.entry{text-align:left}
+.entry p{margin:0 0 1em;white-space:pre-line}
+.entry.poem p{text-align:center;font-style:italic}
+.kind{text-transform:uppercase;letter-spacing:.18em;font-size:.8rem;color:var(--accent)}
+.grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:18px}
+.day{aspect-ratio:1;border-radius:50%;border:1px solid var(--line);background:var(--seal);color:var(--soft);display:flex;align-items:center;justify-content:center;font-size:1.1rem;cursor:default;padding:0;margin:0}
+.day.open{background:var(--paper);color:var(--ink);border-color:var(--accent);cursor:pointer}
+.day.today{box-shadow:0 0 0 3px var(--accent)}
+.nav{display:flex;justify-content:space-between;margin-top:14px}
+.fade{animation:f .8s ease both}@keyframes f{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.wrap{position:relative;z-index:1}
+.entry{position:relative;margin-top:34px}
+.entry::before{content:"";position:absolute;inset:8px;border:1px dashed var(--line);border-radius:16px;pointer-events:none}
+.seal{width:56px;height:56px;border-radius:50%;background:var(--accent);margin:-62px auto 12px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;box-shadow:0 3px 8px rgba(78,58,47,.3);border:3px solid var(--paper)}
+.entry .kind,.entry .script,.entry h2{text-align:center}
+.entry:not(.poem) p:first-of-type::first-letter{font-family:'Dancing Script',cursive;font-size:2.8em;float:left;line-height:.85;padding:4px 8px 0 0;color:var(--accent)}
+.sign{font-family:'Dancing Script',cursive;color:var(--accent);font-size:1.5rem;text-align:right;margin:10px 0 6px}
+.entry.wl p:first-of-type::first-letter{font-family:inherit;font-size:1em;float:none;line-height:inherit;padding:0;color:inherit}
+.fh{position:fixed;bottom:-30px;opacity:0;font-size:16px;pointer-events:none;animation:up linear infinite}
+@keyframes up{0%{transform:translateY(0);opacity:0}10%{opacity:.35}90%{opacity:.25}100%{transform:translateY(-110vh);opacity:0}}
+@media (prefers-reduced-motion:reduce){.fh{display:none}}
+</style></head>
+<body><div class="wrap" id="app"></div>
+<script>
+// ====== CHANGE THIS to the day he gets Day 1 (YYYY-MM-DD) ======
+var LAUNCH="2026-11-09";
+// ================================================================
+var WELCOME="My love,\n\nSome stories deserve another chapter. I’m not writing this to rewrite the past. I’m writing it because I’m still thinking of you, still choosing you, and still hopeful about who we could become.\n\nEach morning, one little piece of my heart will open for you. Read it slowly.\n\nYours, always";
+var E=[
+["Memory","Day 1 · The Boy in Blue Shorts","I remember you in your blue shorts.\n\nWe exchanged greetings, and there was that little excitement that came with discovering we were from the same tribe.\n\nI remember thinking you were different from the people around you. You were composed, well-behaved, articulate, and had this effortless charm about you.\n\nYou spoke so well, carried yourself with a certain grace, and somehow managed to stand out without doing anything extraordinary.\n\nBut here’s the funny part: I didn’t think much of it.\n\nI didn’t go back imagining a future with you. I didn’t picture us having long conversations or becoming important parts of each other’s lives.\n\nYou were simply a charming young man I happened to meet in Numan.\n\nLittle did I know that the same person I barely gave a second thought to would eventually occupy such a special place in my heart.\n\nLife really does have a funny way of introducing us to people, doesn’t it?\n\nIf someone had told me that I would one day be writing you a collection of letters, I probably would have laughed.\n\nYet, here I am, beginning with the boy in blue shorts.","From the girl who had no idea. 🤍"],
+["Letter","Day 2 · Coming soon","This page is still being written. 🤍"],
+["Letter","Day 3 · Coming soon","This page is still being written. 🤍"],
+["Letter","Day 4 · Coming soon","This page is still being written. 🤍"],
+["Letter","Day 5 · Coming soon","This page is still being written. 🤍"],
+["Letter","Day 6 · Coming soon","This page is still being written. 🤍"],
+["Letter","Day 7 · Coming soon","This page is still being written. 🤍"],
+["Letter","Day 8 · Coming soon","This page is still being written. 🤍"],
+["Letter","Day 9 · Coming soon","This page is still being written. 🤍"],
+["Letter","Day 10 · Coming soon","This page is still being written. 🤍"],
+["Letter","Day 11 · Coming soon","This page is still being written. 🤍"],
+["Letter","Day 12 · Coming soon","This page is still being written. 🤍"],
+["Letter","Day 13 · Coming soon","This page is still being written. 🤍"],
+["Letter","Day 14 · Coming soon","This page is still being written. 🤍"],
+["Letter","Day 15 · Coming soon","This page is still being written. 🤍"],
+["Letter","Day 16 · Coming soon","This page is still being written. 🤍"],
+["Letter","Day 17 · Coming soon","This page is still being written. 🤍"],
+["Letter","Day 18 · Coming soon","This page is still being written. 🤍"],
+["Letter","Day 19 · Coming soon","This page is still being written. 🤍"],
+["Letter","Day 20 · Coming soon","This page is still being written. 🤍"],
+["Letter","Day 21 · Coming soon","This page is still being written. 🤍"],
+["Letter","Day 22 · Coming soon","This page is still being written. 🤍"],
+["Letter","Day 23 · Coming soon","This page is still being written. 🤍"],
+["Letter","Day 24 · Coming soon","This page is still being written. 🤍"],
+["Letter","Day 25 · Coming soon","This page is still being written. 🤍"],
+["Letter","Day 26 · Coming soon","This page is still being written. 🤍"],
+["Letter","Day 27 · Coming soon","This page is still being written. 🤍"],
+["Letter","Day 28 · Coming soon","This page is still being written. 🤍"],
+["Letter","Day 29 · Coming soon","This page is still being written. 🤍"],
+["Letter","Day 30 · Coming soon","This page is still being written. 🤍"]
+];
+var app=document.getElementById("app");
+function dayNum(){
+ if(location.hash==="#preview")return 30;
+ var p=LAUNCH.split("-"),n=new Date();
+ var a=Date.UTC(+p[0],p[1]-1,+p[2]),b=Date.UTC(n.getFullYear(),n.getMonth(),n.getDate());
+ return Math.floor((b-a)/864e5)+1;
+}
+function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;")}
+function home(){
+ var d=dayNum(),btn;
+ if(d<1)btn='<p class="script">Tonight, just read the welcome.<br>Tomorrow, your story begins.</p>';
+ else btn='<button onclick="go(\'day-'+Math.min(d,30)+'\')">Open today’s page</button>';
+ app.innerHTML='<div class="card fade"><h1>US 🤍 Again ✨🥹</h1><div class="tag">Little pieces of my heart, delivered one at a time</div><hr><h2>Some stories deserve another chapter.</h2><p>And perhaps ours is one of them.</p><p class="small">A collection of 30 days of love, thoughts, confessions and possibilities.</p>'+btn+'<br><button class="ghost" onclick="go(\'welcome\')">Read the welcome</button><button class="ghost" onclick="go(\'diary\')">My diary</button></div>';
+}
+function welcome(){
+ app.innerHTML='<div class="card entry fade wl"><div class="seal">🤍</div><h1 style="text-align:center;font-size:2.1rem">US 🤍 Again ✨🥹</h1><div class="tag" style="text-align:center">30 Days • 30 Letters • Our Story</div><hr><div class="script" style="font-size:1.7rem">Ife,</div><h2 style="font-size:1.5rem">Some stories deserve another chapter.</h2><p>I’m not writing this to rewrite the past. I’m writing it because I’m still thinking of you, still choosing you, and still hopeful about who we could become.</p><p>Each morning, one little piece of my heart will open for you. Take your time with each letter, and read it slowly.</p><div class="sign">Yours, always. 🤍</div><hr><div style="text-align:center"><div class="kind">A little something for you</div><p class="tag">Your first letter awaits...</p><button onclick="openFirst()">OPEN YOUR LETTER ♡</button><p class="small" id="wmsg"></p><p class="small">A thirty-day journey of love, memories and us. ♡</p><button class="ghost" onclick="go(\'home\')">Home</button><button class="ghost" onclick="go(\'diary\')">My diary</button></div></div>';
+}
+function diary(){
+ var d=dayNum(),g="";
+ for(var i=1;i<=30;i++){
+  var o=i<=d;
+  g+='<button class="day'+(o?' open':'')+(i===d?' today':'')+'" '+(o?'onclick="go(\'day-'+i+'\')"':'disabled')+'>'+(o?i:'🔒')+'</button>';
+ }
+ app.innerHTML='<div class="card fade"><h2>My diary</h2><p class="small">'+(d<1?'Nothing has opened yet.':Math.min(d,30)+' of 30 pages open.')+' The rest are sealed until their day.</p><div class="grid">'+g+'</div><br><button class="ghost" onclick="go(\'home\')">Home</button></div>';
+}
+function day(n){
+ var d=dayNum();
+ if(n<1||n>30||n>d){diary();return}
+ var e=E[n-1],cls=e[0]==="Poem"?" poem":"",t=e[1].split(" · ").slice(1).join(" · ");
+ app.innerHTML='<div class="card entry fade'+cls+'"><div class="seal">🤍</div><div class="kind">'+e[0]+'</div><div class="script">Day '+("0"+n).slice(-2)+'</div><h2>'+esc(t)+'</h2><hr><p>'+esc(e[2])+'</p>'+(e[3]?'<div class="sign">'+esc(e[3])+'</div>':'')+(n===30?'<div class="script" style="text-align:center">US 🤍 Again</div>':'')+'<div class="nav"><button class="ghost" onclick="go(\''+(n>1?'day-'+(n-1):'home')+'\')">'+(n>1?'← Back':'Home')+'</button><button onclick="go(\'diary\')">All pages</button></div></div>';
+}
+function openFirst(){if(dayNum()<1)document.getElementById("wmsg").textContent="Your first letter opens tomorrow morning 🤍";else go("day-1")}
+function go(h){location.hash=h==="home"?"":h;render()}
+function render(){
+ var h=location.hash.replace("#","");
+ window.scrollTo(0,0);
+ if(h==="welcome")welcome();
+ else if(h==="diary")diary();
+ else if(h.indexOf("day-")===0)day(parseInt(h.slice(4),10));
+ else home();
+}
+for(var k=0;k<8;k++){var s=document.createElement("span");s.className="fh";s.textContent="🤍";s.style.left=(8+k*12)+"%";s.style.animationDelay=(k*1.7)+"s";s.style.animationDuration=(12+k%3*3)+"s";document.body.appendChild(s)}
+window.addEventListener("hashchange",render);render();
+</script></body></html>
